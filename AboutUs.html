@@ -4,77 +4,258 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" src="style.css"> -->
-    <title>FARMERS HELP CENTER</title>
+    <title>Farmers Help Center</title>
     <style>
-        div{
-            font-family: cursive, sans-serif;
-      background-color: #2ecc71;
-      color: white;
-      padding: 10px;
-      border-radius: 4px;
-      box-shadow: 2px 2px 20px 23px #7fecad;
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
-        .content {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-     }
-     .list-items{
-         margin-right: 20px;
-     }
+
+        body {
+            background: linear-gradient(120deg, #2ecc71, #27ae60);
+            color: white;
+            text-align: center;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            background: #f39c12;
+            box-shadow: 0 0 10px #f39c12;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 50px;
+        }
+
+        .hero img {
+            width: 400px;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .hero img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Profile Card */
+        .profile-card {
+            max-width: 400px;
+            background: #f39c12;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .profile-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Information Section */
+        .info-section {
+            background: white;
+            color: black;
+            padding: 25px;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 12px;
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-section ul {
+            list-style-type: square;
+            text-align: left;
+            padding-left: 20px;
+            font-size: 18px;
+        }
+
+        /* Query Form */
+        .query-form {
+            background: rgba(255, 165, 0, 0.9);
+            color: white;
+            padding: 25px;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 12px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .query-form h1 {
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        .query-form form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .query-form input {
+            width: 80%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+        }
+
+        .query-form input[type="submit"] {
+            background: #27ae60;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .query-form input[type="submit"]:hover {
+            background: #2ecc71;
+            box-shadow: 0 0 10px #2ecc71;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero, .profile-card, .info-section, .query-form {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .hero img {
+                width: 90%;
+            }
+
+            .profile-card {
+                width: 90%;
+            }
+
+            .info-section, .query-form {
+                width: 90%;
+            }
+
+            .navbar ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
     </style>
 </head>
 <body>
-    
 
-    <div class="content" style="text-align: center;">
-        <li class="list-items"><a href="index.html">Home</a></li>
-        <li class="list-items"><a href="ContactUs.html">Contact Us</a></li>
-        <li class="list-items"><a href="AboutUs.html">About Us</a></li>
-        <li class="list-items"><a href="buyerseller.html">BUYER AND SELLER</a></li>
-    </div>
-    <div>
-        <center>  <img width="500px";height='500px' src="farmerlogo.jpg" alt="farmer logo" ></center>
-    </div>
-    <div class="column">
-        <div class="card">
-          <div class="container"style="background-color: orange;padding: 20px;box-shadow: 2px 2px 20px 23px #f0cb81; ">
-            <h2>S.NAGI REDDY</h2>
-            <p class="title">Front-end, python, java and C++ developer.</p>
-            <p>Good in problem solving, technical and programming skills.</p>
-            <p>seelam.nanireddy11@gmail.com</p>
-            <p>khammam, telangana,India,507203</p>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ContactUs.html">Contact Us</a></li>
+            <li><a href="AboutUs.html">About Us</a></li>
+            <li><a href="buyerseller.html">Buyer & Seller</a></li>
+        </ul>
+    </nav>
 
-          </div>
-        </div>
-      </div>
-    
-    <div>
-        
-      <li>This Farmer Portal facilitates a single window solution to the farmers and stakeholders to disseminate the information about the Government schemes,market rates, Seed information, Farm Machinery, Fertilizers, soil info,weather information, advices ,problems and solutions in farming sector.</li> <br>
-      <li>It also provides easy portal access by providing various required links for government schems, weather information, market rates and other  relevant links.</li> <br>
-      <li>It helps farmers to get all the required information at one place without any delay and waste of time.</li>
-
-    </div>
-    <br>
-
-    <div style="text-align: center;background-color: orange;padding: 20px;box-shadow: 2px 2px 20px 23px #f0cb81;">
-      <h1>QUERY FORM</h1>
-<form >
-  <label for="fname">Enter your name:</label><br>
-  <input type="text" id="name" name="name" value=""><br>
-  <label for="Contact">Enter contact no:</label><br>
-  <input type="int" id="Contact" name="Contact" value=""><br>
-  <label for="fname">Write your Query:</label><br>
-  <input type="text" id="Query" name="Query" value=""><br><br>
-  <input type="submit" value="Submit">
-</form>
-
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Farmers Help Center</h1>
+        <img src="farmerlogo.jpg" alt="Farmer Logo">
     </div>
 
-    
-    
+    <!-- Profile Card -->
+    <div class="profile-card">
+        <h2>S. Nagi Reddy</h2>
+        <p><strong>Skills:</strong> Front-end, Python, Java, and C++ Developer</p>
+        <p><strong>Expertise:</strong> Problem Solving, Technical & Programming Skills</p>
+        <p><strong>Email:</strong> seelam.nanireddy11@gmail.com</p>
+        <p><strong>Location:</strong> Khammam, Telangana, India, 507203</p>
+    </div>
+
+    <!-- Information Section -->
+    <div class="info-section">
+        <h2>About the Portal</h2>
+        <ul>
+            <li>This Farmer Portal provides a one-stop solution for farmers to access information about government schemes, market rates, seed information, and farming machinery.</li>
+            <li>It offers easy access to essential government links related to farming, weather forecasts, and real-time market rates.</li>
+            <li>Farmers can save time and make informed decisions with all necessary resources in one place.</li>
+        </ul>
+    </div>
+
+    <!-- Query Form -->
+    <div class="query-form">
+        <h1>Query Form</h1>
+        <form>
+            <label for="name">Enter your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+            <label for="contact">Enter Contact No:</label>
+            <input type="text" id="contact" name="contact" placeholder="Your Contact No" required>
+
+            <label for="query">Write Your Query:</label>
+            <input type="text" id="query" name="query" placeholder="Your Query" required>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025 Farmers Help Center | All Rights Reserved</p>
+    </div>
+
 </body>
 </html>
